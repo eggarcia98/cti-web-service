@@ -1,12 +1,13 @@
-package com.howtodoinjava.endpoints;
-import com.howtodoinjava.repository.StudentRepository;
+package com.ctiwebservice.endpoints;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
-import com.howtodoinjava.xml.school.StudentDetailsRequest;
-import com.howtodoinjava.xml.school.StudentDetailsResponse;
+
+import com.ctiwebservice.repository.StudentRepository;
+import com.ctiwebservice.xml.school.StudentDetailsRequest;
+import com.ctiwebservice.xml.school.StudentDetailsResponse;
 @Endpoint
 public class StudentEndpoint
 {

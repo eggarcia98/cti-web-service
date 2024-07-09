@@ -1,11 +1,12 @@
-package com.howtodoinjava.repository;
+package com.ctiwebservice.repository;
 
 import java.util.HashMap;
 import java.util.Map;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
-import com.howtodoinjava.xml.school.Student;
+
+import com.ctiwebservice.xml.school.Student;
 
 @Component
 public class StudentRepository {
