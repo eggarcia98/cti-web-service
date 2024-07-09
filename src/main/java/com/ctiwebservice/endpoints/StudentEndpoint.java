@@ -11,7 +11,7 @@ import com.ctiwebservice.xml.school.StudentDetailsResponse;
 @Endpoint
 public class StudentEndpoint
 {
-  private static final String NAMESPACE_URI = "http://www.howtodoinjava.com/xml/school";
+  private static final String NAMESPACE_URI = "http://www.ctiwebservice.com/xml/school";
   private StudentRepository StudentRepository;
   @Autowired
   public StudentEndpoint(StudentRepository StudentRepository) {
