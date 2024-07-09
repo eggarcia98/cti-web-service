@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HowtodoinjavaApplication {
+public class WebSerivceApplication {
 	  public static void main(String[] args) {
-		    SpringApplication.run(HowtodoinjavaApplication.class);
+		    SpringApplication.run(WebSerivceApplication.class);
 		  }
 
 }
