@@ -15,18 +15,18 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for Student complex type.
+ * <p>Java class for classroom complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="Student"&gt;
+ * &lt;complexType name="classroom"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="standard" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="address" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="capacity" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -36,18 +36,33 @@ import jakarta.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Student", propOrder = {
+@XmlType(name = "classroom", propOrder = {
+    "id",
     "name",
-    "standard",
-    "address"
+    "capacity"
 })
-public class Student {
+public class Classroom {
 
+    protected long id;
     @XmlElement(required = true)
     protected String name;
-    protected int standard;
-    @XmlElement(required = true)
-    protected String address;
+    protected int capacity;
+
+    /**
+     * Gets the value of the id property.
+     * 
+     */
+    public long getId() {
+        return id;
+    }
+
+    /**
+     * Sets the value of the id property.
+     * 
+     */
+    public void setId(long value) {
+        this.id = value;
+    }
 
     /**
      * Gets the value of the name property.
@@ -74,43 +89,19 @@ public class Student {
     }
 
     /**
-     * Gets the value of the standard property.
+     * Gets the value of the capacity property.
      * 
      */
-    public int getStandard() {
-        return standard;
+    public int getCapacity() {
+        return capacity;
     }
 
     /**
-     * Sets the value of the standard property.
+     * Sets the value of the capacity property.
      * 
      */
-    public void setStandard(int value) {
-        this.standard = value;
-    }
-
-    /**
-     * Gets the value of the address property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getAddress() {
-        return address;
-    }
-
-    /**
-     * Sets the value of the address property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAddress(String value) {
-        this.address = value;
+    public void setCapacity(int value) {
+        this.capacity = value;
     }
 
 }
