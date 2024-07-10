@@ -26,24 +26,21 @@
   </xs:complexType>
 
 
-  <xs:element name="GetClassroomsRequest" type="tns:GetClassroomsRequest"/>
-    <xs:element name="GetClassroomsResponse" type="tns:GetClassroomsResponse"/>
-
-    <xs:complexType name="GetClassroomsRequest">
+    <xs:complexType name="GetProductsRequest">
         <!-- Define any request parameters if needed -->
     </xs:complexType>
 
-    <xs:complexType name="GetClassroomsResponse">
+    <xs:complexType name="GetProductsResponse">
         <xs:sequence>
-            <xs:element name="classrooms" type="tns:classroom" maxOccurs="unbounded"/>
+            <xs:element name="products" type="tns:product" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="classroom">
+    <xs:complexType name="product">
         <xs:sequence>
             <xs:element name="id" type="xs:long"/>
             <xs:element name="name" type="xs:string"/>
-            <xs:element name="capacity" type="xs:int"/>
+            <xs:element name="price" type="xs:double"/>
         </xs:sequence>
     </xs:complexType>
 </xs:schema>	
