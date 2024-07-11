@@ -1,6 +1,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.ctiwebservice.com/xml/school"
            targetNamespace="http://www.ctiwebservice.com/xml/school" elementFormDefault="qualified">
 
+  <!-- Student Details Request -->
   <xs:element name="StudentDetailsRequest">
     <xs:complexType>
       <xs:sequence>
@@ -9,6 +10,7 @@
     </xs:complexType>
   </xs:element>
 
+  <!-- Student Details Response -->
   <xs:element name="StudentDetailsResponse">
     <xs:complexType>
       <xs:sequence>
@@ -17,6 +19,7 @@
     </xs:complexType>
   </xs:element>
 
+  <!-- Student Complex Type -->
   <xs:complexType name="Student">
     <xs:sequence>
       <xs:element name="name" type="xs:string"/>
@@ -25,22 +28,29 @@
     </xs:sequence>
   </xs:complexType>
 
-
-    <xs:complexType name="GetProductsRequest">
-        <!-- Define any request parameters if needed -->
+  <!-- Get Products Request -->
+  <xs:element name="GetProductsRequest">
+    <xs:complexType>
+      <!-- Define any request parameters if needed -->
     </xs:complexType>
+  </xs:element>
 
-    <xs:complexType name="GetProductsResponse">
-        <xs:sequence>
-            <xs:element name="products" type="tns:product" maxOccurs="unbounded"/>
-        </xs:sequence>
+  <!-- Get Products Response -->
+  <xs:element name="GetProductsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="products" type="tns:Product" maxOccurs="unbounded"/>
+      </xs:sequence>
     </xs:complexType>
+  </xs:element>
 
-    <xs:complexType name="product">
-        <xs:sequence>
-            <xs:element name="id" type="xs:long"/>
-            <xs:element name="name" type="xs:string"/>
-            <xs:element name="price" type="xs:double"/>
-        </xs:sequence>
-    </xs:complexType>
-</xs:schema>	
+  <!-- Product Complex Type -->
+  <xs:complexType name="Product">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="price" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

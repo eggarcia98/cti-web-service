@@ -33,9 +33,24 @@ public class SoapConfig extends WsConfigurerAdapter {
     wsdl11Definition.setSchema(studentSchema);
     return wsdl11Definition;
   }
+  
+  @Bean(name = "productsWsdl")
+  public DefaultWsdl11Definition productsWsdl11Definition(XsdSchema productsSchema) {
+      DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
+      wsdl11Definition.setPortTypeName("ProductsPort");
+      wsdl11Definition.setLocationUri("/service/products");
+      wsdl11Definition.setTargetNamespace("http://www.ctiwebservice.com/xml/school");
+      wsdl11Definition.setSchema(productsSchema);
+      return wsdl11Definition;
+  }
 
   @Bean
   public XsdSchema studentSchema() {
     return new SimpleXsdSchema(new ClassPathResource("student.xsd"));
+  }
+  
+  @Bean
+  public XsdSchema productsSchema() {
+      return new SimpleXsdSchema(new ClassPathResource("student.xsd")); // Use the same XSD if it contains both definitions
   }
 }
