@@ -11,21 +11,21 @@ package com.ctiwebservice.xml.school;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for category complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType&gt;
+ * &lt;complexType name="category"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="Student" type="{http://www.ctiwebservice.com/xml/school}Student"/&gt;
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
+ *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -35,37 +35,54 @@ import jakarta.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "student"
+@XmlType(name = "category", propOrder = {
+    "id",
+    "name"
 })
-@XmlRootElement(name = "StudentDetailsResponse")
-public class StudentDetailsResponse {
+public class Category {
 
-    @XmlElement(name = "Student", required = true)
-    protected Student student;
+    protected long id;
+    @XmlElement(required = true)
+    protected String name;
 
     /**
-     * Gets the value of the student property.
+     * Gets the value of the id property.
      * 
-     * @return
-     *     possible object is
-     *     {@link Student }
-     *     
      */
-    public Student getStudent() {
-        return student;
+    public long getId() {
+        return id;
     }
 
     /**
-     * Sets the value of the student property.
+     * Sets the value of the id property.
+     * 
+     */
+    public void setId(long value) {
+        this.id = value;
+    }
+
+    /**
+     * Gets the value of the name property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * Sets the value of the name property.
      * 
      * @param value
      *     allowed object is
-     *     {@link Student }
+     *     {@link String }
      *     
      */
-    public void setStudent(Student value) {
-        this.student = value;
+    public void setName(String value) {
+        this.name = value;
     }
 
 }

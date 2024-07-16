@@ -26,20 +26,41 @@
 		    public GetProductsResponse getProducts(@RequestPayload GetProductsRequest request) {
 		    	
 		    	System.err.println("Received request: " + request);
-		        System.err.println("Request name: " + request.getName());
+		        System.err.println("Request name: " + request.getCategoryId());
 		        
+//		        long categoryId = request.getCategoryId();
 		        // If name is null, log an error
-		        if (request.getName() == null) {
-		            System.err.println("Request name is null");
+		        if (request != null && Long.valueOf(request.getCategoryId()) != 0) {
+		        	List<com.ctiwebservice.model.Product> productsByCategoryId = productService.getProductsByCategoryId(request.getCategoryId());
+		        	
+		        	 List<Product> responseProducts = productsByCategoryId.stream()
+				                .map(p -> {
+				                    Product product = new Product();
+				                    product.setId(p.getId());
+				                    product.setName(p.getName());
+				                    product.setPrice(p.getPrice());
+				                    product.setDescription(p.getDescription());
+				                    product.setCategoryId(p.getCategoryId());
+				                    return product;
+				                })
+				                .collect(Collectors.toList());
+			
+				        GetProductsResponse response = new GetProductsResponse();
+				        
+				        
+				        response.getProducts().addAll(responseProducts);
+				        return response;
 		        }
 		        
-		        List<com.ctiwebservice.model.Product> products = productService.getProductsByName(request.getName());
+		        List<com.ctiwebservice.model.Product> products = productService.getAllProducts();
 		        List<Product> responseProducts = products.stream()
 		                .map(p -> {
 		                    Product product = new Product();
 		                    product.setId(p.getId());
 		                    product.setName(p.getName());
 		                    product.setPrice(p.getPrice());
+		                    product.setDescription(p.getDescription());
+		                    product.setCategoryId(p.getCategoryId());
 		                    return product;
 		                })
 		                .collect(Collectors.toList());

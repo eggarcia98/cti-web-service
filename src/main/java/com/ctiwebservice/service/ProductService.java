@@ -34,4 +34,8 @@ public class ProductService {
     public List<Product> getProductsByName(String name) {
         return productRepository.findByName(name);
     }
+    
+    public List<Product> getProductsByCategoryId(Long categoryId) {
+        return productRepository.findByCategoryId(categoryId);
+    }
 }

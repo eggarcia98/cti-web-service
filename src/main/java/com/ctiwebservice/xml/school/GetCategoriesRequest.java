@@ -25,7 +25,7 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="Student" type="{http://www.ctiwebservice.com/xml/school}Student"/&gt;
+ *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -36,36 +36,36 @@ import jakarta.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "student"
+    "name"
 })
-@XmlRootElement(name = "StudentDetailsResponse")
-public class StudentDetailsResponse {
+@XmlRootElement(name = "GetCategoriesRequest")
+public class GetCategoriesRequest {
 
-    @XmlElement(name = "Student", required = true)
-    protected Student student;
+    @XmlElement(required = true)
+    protected String name;
 
     /**
-     * Gets the value of the student property.
+     * Gets the value of the name property.
      * 
      * @return
      *     possible object is
-     *     {@link Student }
+     *     {@link String }
      *     
      */
-    public Student getStudent() {
-        return student;
+    public String getName() {
+        return name;
     }
 
     /**
-     * Sets the value of the student property.
+     * Sets the value of the name property.
      * 
      * @param value
      *     allowed object is
-     *     {@link Student }
+     *     {@link String }
      *     
      */
-    public void setStudent(Student value) {
-        this.student = value;
+    public void setName(String value) {
+        this.name = value;
     }
 
 }
