@@ -19,7 +19,7 @@ README.Docker.md
 *.iws
 *.iml
 *.ipr
-*.yaml
+# *.yaml
 
 ### NetBeans ###
 /nbproject/private/
